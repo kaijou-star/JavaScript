@@ -2,27 +2,105 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Biodata Inline JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Sederhana</title>
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 320px;
+        }
+
+        h1 {
+            color: #1c1e21;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #4b4f56;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input:focus {
+            border-color: #1877f2;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #166fe5;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Biodata Sederhana</h1>
+    <div class="container">
+        <h1>Halo!</h1>
+        
+        <div class="input-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="namaInput" placeholder="Ketik nama kamu di sini...">
+        </div>
 
-    <label>Masukkan Nama:</label><br>
-    <input type="text"
-           onkeyup="console.log('Nama diketik: ' + this.value)">
-    <br><br>
+        <button onclick="prosesBiodata()">Tampilkan Biodata</button>
+    </div>
 
-    <button onclick="
-        let nama = document.querySelector('input').value;
-        if(nama === ''){
-            alert('Nama belum diisi!');
-        } else {
-            alert('Halo ' + nama + ', Welcome broo 😊');
+    <script>
+        
+        function prosesBiodata() {
+            
+            let nama = document.getElementById('namaInput').value;
+
+            if (nama.trim() === '') {
+                alert('Waduh, namanya diisi dulu dong! 😅');
+            } else {
+                alert('Halo ' + nama + ', Welcome broo 😊');
+                console.log('User menginput nama: ' + nama);
+            }
         }
-    ">
-        Tampilkan Biodata
-    </button>
+    </script>
 
 </body>
 </html>

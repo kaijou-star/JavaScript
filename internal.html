@@ -2,19 +2,93 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Biodata JS Internal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Sederhana</title>
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #9face6;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #6c5ce7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #a29bfe;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Biodata Sederhana</h1>
+    <div class="card">
+        <h1>Biodata</h1>
 
-    <label>Masukkan Nama:</label><br>
-    <input type="text" id="nama" onkeyup="tampilkanNama()">
-    <br><br>
+        <div class="form-group">
+            <label>Masukkan Nama:</label>
+            <input type="text" id="nama" onkeyup="tampilkanNama()" placeholder="Contoh: Budi">
+        </div>
 
-    <button onclick="tampilkanAlert()">Tampilkan Biodata</button>
+        <button onclick="tampilkanAlert()">Sapa Saya!</button>
+    </div>
 
     <script>
+        
         function tampilkanNama() {
             let nama = document.getElementById("nama").value;
             console.log("Nama yang diketik: " + nama);
@@ -23,7 +97,7 @@
         function tampilkanAlert() {
             let nama = document.getElementById("nama").value;
 
-            if (nama === "") {
+            if (nama.trim() === "") {
                 alert("Nama belum diisi!");
             } else {
                 alert("Halo " + nama + ", selamat datang 😊");
