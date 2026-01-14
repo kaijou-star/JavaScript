@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Biodata dan Prompt</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Biodata Interaktif</h1>
+        <p>Klik tombol di bawah untuk mengisi biodata menggunakan <b>prompt</b>.</p>
+        <button onclick="isiBiodata()">Isi Biodata</button>
+    </div>
+
+    <script>
+        function isiBiodata() {
+            let nama = prompt("Masukkan nama kamu:");
+            if (nama === null || nama === "") {
+                alert("Nama wajib diisi!");
+                return;
+            }
+
+            let umur = prompt("Masukkan umur kamu:");
+            if (umur === null || umur === "") {
+                alert("Umur wajib diisi!");
+                return;
+            }
+
+            let hobi = prompt("Masukkan hobi kamu:");
+            if (hobi === null || hobi === "") {
+                alert("Hobi wajib diisi!");
+                return;
+            }
+
+            // Output
+            console.log("=== BIODATA ===");
+            console.log("Nama : " + nama);
+            console.log("Umur : " + umur);
+            console.log("Hobi : " + hobi);
+
+            alert(
+                "Biodata Berhasil Diisi!\n\n" +
+                "Nama : " + nama + "\n" +
+                "Umur : " + umur + " tahun\n" +
+                "Hobi : " + hobi
+            );
+        }
+    </script>
+
+</body>
+</html>

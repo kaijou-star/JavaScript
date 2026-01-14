@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Biodata Sederhana</title>
+
+    <script>
+        function tampilkanNama() {
+            let nama = document.getElementById("nama").value;
+            console.log("Nama yang sedang diketik: " + nama);
+        }
+
+        function sapa() {
+            let nama = document.getElementById("nama").value;
+
+            if (nama === "") {
+                alert("Nama belum diisi!");
+            } else {
+                alert("Halo " + nama + ", selamat datang 😊");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Biodata Sederhana</h1>
+
+    <label>Masukkan Nama:</label><br>
+    <input type="text" id="nama" onkeyup="tampilkanNama()">
+    <br><br>
+
+    <button onclick="sapa()">Tampilkan Biodata</button>
+
+</body>
+</html>

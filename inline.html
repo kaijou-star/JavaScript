@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Biodata Inline JS</title>
+</head>
+<body>
+
+    <h1>Biodata Sederhana</h1>
+
+    <label>Masukkan Nama:</label><br>
+    <input type="text"
+           onkeyup="console.log('Nama diketik: ' + this.value)">
+    <br><br>
+
+    <button onclick="
+        let nama = document.querySelector('input').value;
+        if(nama === ''){
+            alert('Nama belum diisi!');
+        } else {
+            alert('Halo ' + nama + ', Welcome broo 😊');
+        }
+    ">
+        Tampilkan Biodata
+    </button>
+
+</body>
+</html>
