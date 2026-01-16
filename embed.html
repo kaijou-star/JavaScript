@@ -2,34 +2,193 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biodata Sederhana</title>
+    
+    <style>
+        /* --- BAGIAN CSS (Tampilan) --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: #4a4a4a;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            box-sizing: border-box; /* Biar input tidak melebar keluar kotak */
+            transition: border-color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        input[type="text"]:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        button:hover {
+            background-color: #5a67d8;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid #513c51;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 0 1rem; /* Diperbaiki dari 1rcap */
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(1); /* Diperbaiki agar muncul saat hover */
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+#hamburger-menu {
+  display: none;
+}
+    </style>
 
     <script>
+    
         function tampilkanNama() {
             let nama = document.getElementById("nama").value;
+            // Muncul di inspect element (F12) browser
             console.log("Nama yang sedang diketik: " + nama);
         }
 
         function sapa() {
             let nama = document.getElementById("nama").value;
 
-            if (nama === "") {
-                alert("Nama belum diisi!");
+            if (nama.trim() === "") {
+                alert("Waduh, namanya diisi dulu dong! 😊");
             } else {
-                alert("Halo " + nama + ", selamat datang 😊");
+                alert("Halo " + nama + ", selamat datang di website saya! 🚀");
             }
         }
     </script>
 </head>
 <body>
 
-    <h1>Biodata Sederhana</h1>
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Cakra <span>Script</span></a>
 
-    <label>Masukkan Nama:</label><br>
-    <input type="text" id="nama" onkeyup="tampilkanNama()">
-    <br><br>
+      <div class="navbar-nav">
+        <a href="index.html">Home</a>
+        <a href="inline.html">Inline</a>
+        <a href="internal.html">Internal</a>
+        <a href="prompt.html">Prompt</a>
+        <a href="embed.html">Embed</a>
+      </div>
+    </nav>
 
-    <button onclick="sapa()">Tampilkan Biodata</button>
+    <div class="container">
+        <h1>Biodata Saya</h1>
+
+        <div class="input-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" onkeyup="tampilkanNama()" placeholder="Masukkan namamu...">
+        </div>
+
+        <button onclick="sapa()">Tampilkan Biodata</button>
+    </div>
 
 </body>
 </html>

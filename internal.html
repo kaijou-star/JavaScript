@@ -72,9 +72,83 @@
             background-color: #a29bfe;
             transform: translateY(-2px);
         }
+        .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid #513c51;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 0 1rem; /* Diperbaiki dari 1rcap */
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(1); /* Diperbaiki agar muncul saat hover */
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+#hamburger-menu {
+  display: none;
+}
     </style>
 </head>
 <body>
+
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Cakra <span>Script</span></a>
+
+      <div class="navbar-nav">
+        <a href="index.html">Home</a>
+        <a href="inline.html">Inline</a>
+        <a href="internal.html">Internal</a>
+        <a href="prompt.html">Prompt</a>
+        <a href="embed.html">Embed</a>
+      </div>
+    </nav>
+
 
     <div class="card">
         <h1>Biodata</h1>

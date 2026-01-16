@@ -2,16 +2,37 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biodata Sederhana</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Biodata</h1>
+  <nav class="navbar">
+      <a href="#" class="navbar-logo">Cakra <span>Script</span></a>
 
-    <label>Nama:</label><br>
-    <input type="text" id="nama" onkeyup="tampilkanNama()"><br><br>
+      <div class="navbar-nav">
+        <a href="index.html">Home</a>
+        <a href="inline.html">Inline</a>
+        <a href="internal.html">Internal</a>
+        <a href="prompt.html">Prompt</a>
+        <a href="embed.html">Embed</a>
+      </div>
+    </nav>
 
-    <button onclick="sapa()">Klik Saya</button>
+
+    <div class="card">
+        <h1>Biodata</h1>
+
+        <div class="form-group">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" onkeyup="tampilkanNama()" placeholder="Masukkan nama...">
+        </div>
+
+        <button onclick="sapa()">Klik Saya</button>
+        
+        <p id="preview"></p>
+    </div>
 
     <script src="script.js"></script>
 </body>
